@@ -18,10 +18,6 @@ function checkEmpty() {
 }
 
 function checkForBlank() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var subject = document.getElementById("subject").value;
-  var message = document.getElementById("message").value;
 
   const inputs = [
     { id: "name", class: ".contact-name .check-blank" },
@@ -62,7 +58,7 @@ function sendEmail() {
     From: "yigitomerasd@gmail.com",
     Subject: subject.value,
     Body: bodyMessage,
-  }).then((message) => alert("Your message has been sent successfully"));
+  }).then(() => alert("Your message has been sent successfully"));
 }
 
 form.addEventListener("submit", (e) => {
@@ -73,7 +69,6 @@ form.addEventListener("submit", (e) => {
     sendEmail();
     form.reset();
   }
-  
 });
 
 const lightbox = document.createElement("div");

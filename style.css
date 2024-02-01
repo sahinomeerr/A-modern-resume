@@ -110,11 +110,11 @@ img {
     brightness(95%) contrast(95%);
 }
 
-.navbar .navbar-nav ul li a.highlight :hover{
+.navbar .navbar-nav ul li a.highlight :hover {
   color: #fff;
 }
 
-.navbar .navbar-nav ul li a.highlight :hover img{
+.navbar .navbar-nav ul li a.highlight :hover img {
   filter: invert(48%) sepia(65%) saturate(638%) hue-rotate(154deg)
     brightness(95%) contrast(95%);
 }
@@ -124,22 +124,21 @@ img {
 #nav-menu,
 #nav-menu-close {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  border: 1px solid #149ddd;
-  background-color: #149ddd;
-  border-radius: 50%;
+  top: 16px;
+  right: 16px;
+  border: 1px solid transparent;
+  background-color: transparent;
   display: none;
 }
 
 #nav-menu img,
 #nav-menu-close img {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   position: relative;
   top: 2px;
-  filter: invert(98%) sepia(3%) saturate(582%) hue-rotate(228deg)
-    brightness(119%) contrast(100%);
+  filter: invert(62%) sepia(31%) saturate(6235%) hue-rotate(167deg)
+    brightness(90%) contrast(91%);
 }
 
 #nav-menu img:hover,
@@ -1059,7 +1058,7 @@ img {
   border: 2px solid #f5f8fd;
 }
 
-.send-message form .form-control .check-blank{
+.send-message form .form-control .check-blank {
   display: none;
   width: 100%;
   color: red;
@@ -1081,9 +1080,9 @@ img {
   width: 25%;
   border-radius: 5px;
   margin: 0 auto;
-  white-space: normal;
+  white-space: wrap;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 16px;
 }
 
@@ -1094,7 +1093,7 @@ img {
 .send-message form .form-control button img {
   width: 20px;
   height: 24px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   filter: invert(100%) sepia(0%) saturate(7467%) hue-rotate(37deg)
     brightness(94%) contrast(115%);
   transition: transform 0.3s ease-in-out;
@@ -1214,26 +1213,26 @@ img {
 }
 
 @media screen and (max-width: 630px) {
-  .testimonials-slide{
+  .testimonials-slide {
     max-width: 20%;
   }
 
-  .last{
+  .last {
     display: none;
   }
 
   #radio1:checked ~ .first {
     margin-left: 0;
   }
-  
+
   #radio2:checked ~ .first {
     margin-left: -20%;
   }
-  
+
   #radio3:checked ~ .first {
     margin-left: -40%;
   }
-  
+
   #radio4:checked ~ .first {
     margin-left: -60%;
   }
@@ -1242,6 +1241,9 @@ img {
     margin-left: -80%;
   }
 
+  .send-message form .form-control button:hover img {
+    transform: translate(0, 0);
+  }
 }
 
 @media screen and (max-width: 440px) {
@@ -1262,11 +1264,20 @@ img {
     width: 100%;
   }
 
-  .navigation-auto, .navigation-manual{
+  .navigation-auto,
+  .navigation-manual {
     display: none;
   }
 
-  .testimonials .card .card-content{
+  .testimonials .card .card-content {
     height: auto;
+  }
+
+  .send-message form .form-control button img {
+    display: none;
+  }
+
+  .send-message form .form-control button {
+    font-size: 10px;
   }
 }
