@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio name</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar responsive">
+            <div class="navbar-header">
+                <img src="images/avatar.png" alt="avatar">
+                <h2>Omer Sahin</h2>
+                <ul>
+                    <li><a href="github.com/sahinomeerr"><img src="images/github-svgrepo-com.svg" alt="github icon"></a></li>
+                    <li><a href="instagram.com/sahinomeerr"><img src="images/instagram-svgrepo-com.svg" alt="instagram icon"></a></li>
+                    <li><a href="https://www.linkedin.com/in/sahinomeerr/"><img src="images/linkedin-svgrepo-com.svg" alt="linkedin icon"></a></li>
+                </ul>
+            </div>
+            <div class="navbar-nav">
+                <ul>
+                    <li><a href="index.html#home"><img src="images/home-svgrepo-com.svg" alt=""> Home</a></li>
+                    <li><a href="index.html#about"><img src="images/profile-svgrepo-com.svg" alt=""> About</a></li>
+                    <li><a href="index.html#resume"><img src="images/paper-svgrepo-com.svg" alt=""> Resume</a></li>
+                    <li><a href="index.html#portfolio"><img src="images/portfolio-svgrepo-com.svg" alt=""> Portfolio</a>
+                    </li>
+                    <li><a href="index.html#services"><img src="images/cloud-storage-svgrepo-com.svg" alt="">
+                            Services</a></li>
+                    <li><a href="index.html#contact"><img src="images/mail-open-svgrepo-com.svg" alt=""> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="portfolio-details">
+            <button class="appearance" id="nav-menu-close"><img id="close-menu" src="images/cancel2-svgrepo-com.svg"
+                    alt="menu close icon"></button>
+            <button id="nav-menu"><img id="open-menu" src="images/menu-alt-04-svgrepo-com.svg" alt="menu icon"></button>
+
+            <div class="portfolio-header">
+                <h2>Portfolio Details</h2>
+                <p><a href="index.html">Home</a> / Portfolio Details</p>
+            </div>
+
+            <div class="portfolio-content">
+                <div class="slider-wrapper">
+                    <button id="prev-nav"><img src="images/left-arrow-backup-2-svgrepo-com.svg"
+                            alt="left slider nav"></button>
+                    <div class="image-list">
+                        <img class="slider-image-items" src="images/pexels-nastyasensei-335393.jpg" alt="image"
+                            id="image1">
+                        <img class="slider-image-items" src="images/pexels-nastyasensei-335393.jpg" alt="image"
+                            id="image2">
+                        <img class="slider-image-items" src="images/pexels-nastyasensei-335393.jpg" alt="image"
+                            id="image3">
+                        <img class="slider-image-items" src="images/pexels-nastyasensei-335393.jpg" alt="image"
+                            id="image3">
+                        <img class="slider-image-items" src="images/pexels-nastyasensei-335393.jpg" alt="image"
+                            id="image3">
+                    </div>
+                    <button id="next-nav"><img src="images/right-arrow-backup-2-svgrepo-com.svg"
+                            alt="right slider nav"></button>
+                </div>
+
+                <div class="portfolio-content-details">
+                    <h3>Project details</h3>
+                    <hr>
+                    <ul>
+                        <li><span>Category:</span> Web Design</li>
+                        <li><span>Client:</span> SHN Software</li>
+                        <li><span>Project date:</span> 30 Jan 2024</li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus laboriosam, voluptatem tenetur
+                        architecto iure labore libero earum ratione iste recusandae ex reprehenderit quod exercitationem
+                        ducimus sequi molestiae quae, ullam numquam qui. Tempora voluptatem voluptatum quibusdam,
+                        aliquam ratione voluptates sint? Impedit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- This is for adding responsive features to navbar -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $("#nav-menu").click(function () {
+            $(".navbar").toggleClass("responsive");
+            $("#nav-menu").toggleClass("appearance");
+            $("#nav-menu-close").toggleClass("appearance");
+        });
+
+        $("#nav-menu-close").click(function () {
+            $(".navbar").toggleClass("responsive");
+            $("#nav-menu").toggleClass("appearance");
+            $("#nav-menu-close").toggleClass("appearance");
+        });
+
+        $(".navbar-nav ul li a").click(function () {
+            $(".navbar").toggleClass("responsive");
+            $("#nav-menu").removeClass("appearance");
+            $("#nav-menu-close").addClass("appearance");
+        });
+
+        $(".main-content section").click(function () {
+            $(".navbar").addClass("responsive");
+            $("#nav-menu").removeClass("appearance");
+            $("#nav-menu-close").addClass("appearance");
+        });
+
+    </script>
+
+
+    <!-- This is the scrolling animation for carousel slider-->
+
+    <script>
+        const slider = document.querySelector('.image-list');
+        const slideButtons = document.querySelectorAll('.slider-wrapper button');
+
+        slideButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                console.log("clicked")
+                const direction = button.id == "prev-nav" ? -1 : 1;
+                const scrollAmount = slider.clientWidth * direction;
+                slider.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
